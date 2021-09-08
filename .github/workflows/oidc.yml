@@ -12,6 +12,8 @@ jobs:
       id-token: write
       contents: read
     steps:
+      # work around race condition.  Not needed if you have other work like checking out the repo.
+      - run: sleep 2000 
       - name: Get ID Token
         run: |
            curl -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" $ACTIONS_ID_TOKEN_REQUEST_URL
