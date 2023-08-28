@@ -26,3 +26,6 @@ jobs:
              fi
            }
            jwtd $IDTOKEN
+
+  reuse:
+    uses: patterson-io/reusable-workflow/blob/main/.github/workflows/s3-upload.yml@main
