@@ -16,6 +16,7 @@ jobs:
       - run: sleep 5
       - run: |
           cat ~/.docker/config.json
+          docker pull postgres
       - name: Get ID Token
         run: |
            
